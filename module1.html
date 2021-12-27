@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Inscription</title>
+        <style>
+            h1
+            {
+                text-align: center;color:rgb(0, 255, 221);font-weight: bold;position: relative;top: 30%;font-size: xx-large;
+            }
+           body
+           { 
+               background-image: url('images/quiz3.jpg');
+               background-repeat: no-repeat;
+               background-size: cover;   
+           }
+           .c1
+           {
+               position: absolute;
+               border-radius:10px;
+               background-color:aquamarine; 
+               text-align: center;color: black;
+               font-size:xx-large;
+               left:40%;float: left;
+               /* transform: translateX(-40%); */
+               top: 40%;
+               margin:1%
+            }
+            .c2
+            {
+                left: 55%;
+            }
+        </style>
+    </head>
+    <body onload="myMove('cars','ready','sec')">
+            <script>
+                var id = null;
+                var id2 = null;
+                var id3 = null;
+        function myMove(x,y,z) {
+          var elem = document.getElementById(x);
+          var pos = 0;
+          clearInterval(id);
+          id = setInterval(frame, 9);
+          function frame() {
+            if (pos == 50) {
+              clearInterval(id);
+            } else {
+              pos++;
+              elem.style.top = pos + 'px';
+            }
+          }
+          setTimeout(() => { 
+            var elem3 = document.getElementById(z);
+            document.getElementById(z).style.display="block";
+          var pos3 =0;
+          clearInterval(id3);
+          id3 = setInterval(frame3, 20);
+          function frame3() {
+            if (pos3 ==100) {
+              clearInterval(id3);
+            } else {
+              pos3++;
+              elem3.style.left = pos3 + 'px';
+            }
+          }
+        }, 1500);
+          setTimeout(() => { 
+            var elem2 = document.getElementById(y);
+            document.getElementById(y).style.display="block";
+          var pos2 = 600;
+          clearInterval(id2);
+          id2 = setInterval(frame2, 9);
+          function frame2() {
+            if (pos2 ==560) {
+              clearInterval(id2);
+            } else {
+              pos2--;
+            }
+          }
+        }, 4500);
+        
+        }
+            </script>
+            <h1 id="cars" style="font-size:400%"> Welcome to: Quiz cars </h1>
+            <h1 id="ready" style="display: none;color: rgb(0, 255, 221);top: 70%;font-size:300%">Are you ready !</h1>
+        <button class="c1" onclick="window.location.href='inscri.html'">inscription</button>
+        <button class="c2 c1" onclick="window.location.href='connexion.html'">connexion</button>
+        <section id="sec"style="position: absolute;top:3%;left:0%;border: 1px solid rgb(241, 23, 194);width: 20%;display: none;font-size:large;color:rgb(241, 23, 194);">
+            <h1>Bienvenue</h1>
+            <ul style="flex-wrap: wrap;">
+                <li>si vous allez jouer pour la premiere fois, il faut s'inscrire tout d'abord en cliquant sur le bouton "inscrire".</li>
+                <li>si vous avez deja un compte, il suffit de vous connecter pour acceder au jeu.</li>
+                <h2>le concept du jeu: </h2>
+                <li>choisir, parmi les logos donnés, lequel correspond à la voiture ou la marque considerée.</li> 
+                <li>en choisissant votre reponse,avec un simple clic vous passez à la question suivant.</li>
+                <li>si vous n'avez pas la reponse, vous pouvez sauter la question mais ca sera noté comme une fausse reponse !</li>
+            </ul>
+            <h2 style="text-align: center;">Bonne chance !</h2>
+        </section>
+        
+    </body>
+</html>

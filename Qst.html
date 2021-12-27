@@ -1,0 +1,616 @@
+<html>
+    <head>
+        <style>
+            
+ /* The container */
+.container {
+    float: left;
+    top:80%;
+    margin-left: 40%;
+position: relative;
+  display: block;
+  cursor: pointer;
+  font-size: 30px;
+  color:aqua;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container input {
+  cursor: pointer;
+}
+
+
+/* btn suivant */
+            @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  right: 40%;
+    position: absolute;
+    top: 80%;
+}
+
+.cta {
+    display: flex;
+    padding: 1%;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: white;
+    background: #25e0e6;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+    cursor: pointer;
+}
+
+.cta:focus {
+   outline: none; 
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 1% 1% 0 #fb38da;
+}
+
+.cta span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0%;
+}
+
+.cta:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 4%;
+}
+
+  span {
+    transform: skewX(15deg) 
+  }
+
+  span:nth-child(2) {
+    width: 20%;
+    margin-left: 30%;
+    position: relative;
+    top: 12%;
+  }
+  
+/**************SVG****************/
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #fb38ca;
+    }
+    100% {
+        fill: white;
+    }
+}
+            body
+            {
+                background-image: url('images/qst3333.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            h2
+            {
+                color: blueviolet;text-decoration: underline;
+            }
+            .c1
+            {
+                font-size: 150%;text-align: center;flex-wrap:wrap;
+                color:rgb(52, 49, 233);background-color: aquamarine;
+                position: relative;border-radius:20px;left:50%;
+                top:50%;transform: translateX(-40%);text-decoration: double;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                width: 20%;height: 12%; text-size-adjust: 50%;
+                text-decoration: underline;
+            }
+            .bt
+            {
+                font-size: 100%;text-align: center;flex-wrap:wrap;
+                color:rgb(52, 49, 233);background-color: aquamarine;
+                border-radius:20px;right:80%;position: absolute;
+                top:80%;transform: translateX(-40%);font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                width: 10%;height: 9%;cursor: pointer;
+                text-decoration: underline;
+            }
+            h1
+            {
+                color:rgb(200, 162, 235);position: absolute;top:20%;right:40%;
+                font-size: 200%;text-align: center;text-align: center;            }
+            .c2
+            {
+                color:rgb(222, 206, 238);left: 25%;position:absolute;
+                font-size: 150%;bottom: 30%;
+            }
+            .cimg
+            {
+                bottom: 20%;
+            }
+            .cbentley
+            {
+                position: absolute;left: 35%;bottom:70%;margin-left:80%;
+            }
+            .cmaserati
+            {
+                position: absolute;
+                top:90%;right:40%;margin-left:80%;
+            } 
+            .suivant
+            {
+                cursor: pointer;float: left;transition-duration: 0.4s; font-size: 30px;height: 20%;width:120%;
+                background-color: rgb(10, 159, 179);border-radius: 10px;left: 30%;bottom: 100%;position: relative;
+            }
+            .suivant:hover
+            {
+                background-color: rgb(231, 13, 202);
+            }
+            .time
+            {
+                position: absolute;bottom: 10%;right: 10%;height: 5%;
+                width: 20%;font-weight: bold;font-size: 25px;text-align: center;
+                color:rgb(43, 174, 226);border:2px dotted mediumslateblue 
+            }
+            .res
+            {
+                top: 10%;left: 70%;font: optional;font-size: 50px;
+                size: 25px;color: rgb(226, 43, 67);display: none;position: absolute;
+            }
+            #myContainer 
+            {
+                width: 40%;
+                height: 40%;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="Bienvenue" style="color: rgb(101, 131, 230);position: absolute;top: 30%;left: 65%;font-size: 50px;"></div>
+        <button id="btn" class="c1" onclick="start()" >Commencer maintenant!</button>
+        <div class="time" id="timer" style="display: none;"></div>
+
+<!-- qst 1 -->
+        <div id="qst1" style="display:none;">
+<h2>Question:1/10</h2>
+            <h1>Qst 1:Quel est ce logo ?</h1><br>
+        <div class="c2">
+            <img src="images/jaguar.jpg"  style="margin-left:80%;position: relative;right: 35%;bottom: 90%;"/><br><br>
+            <button type="submit" class="suivant" id="11" onclick="afficher('qst1','qst2');reponse(11,1)">Jaguar</button>   
+            <br/><button type="submit" class="suivant" id="21" onclick="afficher('qst1','qst2');reponse(21,1)">Dodge</button>   
+           <br/> <button type="submit" class="suivant" id="31" onclick="afficher('qst1','qst2');reponse(31,1)">Ferrari</button>   
+        </div>
+        <button class="bt" type="submit" onclick="afficher('qst1','qst2');reponse(0,1)">Suivant</button>
+        </div>
+
+<!-- qst 2 -->
+    <div id="qst2" style="display:none;">
+        <h2>Question:2/10</h2>
+        <h1>Qst 2:Quel est ce logo ?</h1><br>
+    <div class="c2">
+        <img src="images/maserati.jpg" style="margin-left:80%;position: relative;right: 35%;bottom: 40%;"><br><br>
+        <button type="submit" class="suivant" id="12" onclick="afficher('qst2','qst3');reponse(12,2)">Maserati</button>   
+        <br><button type="submit" class="suivant"id="22" onclick="afficher('qst2','qst3');reponse(22,2)">Chrysler</button>   
+       <br/> <button type="submit" class="suivant" id="32" onclick="afficher('qst2','qst3');reponse(32,2)">Cadillac</button>   
+    </div>
+    <button class="bt" type="submit" onclick="afficher('qst2','qst3');reponse(0,2)">Suivant</button>
+    </div>
+
+ <!-- qst 3 -->
+    <div id="qst3" style="display:none;">
+        <h2>Question:3/10</h2>
+        <h1>Qst 3:Quel est ce logo ?</h1><br>
+    <div class="c2">
+        <img src="images/ferrari1.jpg"  style="margin-left:80%;position: relative;right: 35%;bottom: 90%;"/><br><br>
+        <button type="submit" class="suivant" id="13" onclick="afficher('qst3','qst4');reponse(13,3)">Pagani</button>   
+        <br/><button type="submit" class="suivant" id="23" onclick="afficher('qst3','qst4');reponse(23,3)">Pontiac</button>   
+       <br/> <button type="submit" class="suivant" id="33" onclick="afficher('qst3','qst4');reponse(33,3)">Ferrari</button>   
+ </div>
+ <button class="bt" type="submit" onclick="afficher('qst3','qst4');reponse(0,3)">Suivant</button>
+    </div>
+
+<!-- qst 4 -->
+    <div id="qst4" style="display:none;">
+        <h2>Question:4/10</h2>
+
+        <h1>Qst 4:Quel est ce logo ?</h1><br>
+    <div class="c2">
+        <img src="images/mustang.jpg"  style="margin-left:80%;position: relative;right: 41%;bottom:40%;"/><br><br>
+        <button type="submit" class="suivant" id="14" onclick="afficher('qst4','qst5');reponse(14,4)">Daewoo</button>   
+        <br/><button type="submit" class="suivant" id="24" onclick="afficher('qst4','qst5');reponse(24,4)">Mustang</button>   
+       <br/> <button type="submit" class="suivant" id="34" onclick="afficher('qst4','qst5');reponse(34,4)">Ferrari</button>   
+ </div>
+ <button class="bt" type="submit" onclick="afficher('qst4','qst5');reponse(0,4)">Suivant</button>
+    </div>
+<!-- qst 5 -->
+    <div id="qst5" style="display:none;">
+        <h2>Question:5/10</h2>
+        <h1>Qst 5:Quel est ce logo ?</h1><br>
+    <div class="c2 cimg">
+        <img src="images/lambo.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:80%;"/><br><br>
+        <button type="submit" class="suivant" id="15" onclick="afficher('qst5','qst6');reponse(15,5)">Lamborghini</button>   
+        <br/><button type="submit" class="suivant" id="25" onclick="afficher('qst5','qst6');reponse(25,5)">Lincoln</button>   
+       <br/><button type="submit" class="suivant" id="35" onclick="afficher('qst5','qst6');reponse(35,5)">Lexus</button>   
+ </div>
+ <button class="bt" type="submit" onclick="afficher('qst5','qst6');reponse(0,5)">Suivant</button>
+    </div>
+
+<!-- qst 6 -->
+    <div id="qst6" style="display:none;">
+        <h2>Question:6/10</h2>
+
+        <h1>Qst 6:Quel est ce logo ?</h1><br>
+    <div class="c2">
+        <img src="images/bentley.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom: 90%;"/><br/>
+        <button type="submit" class="suivant" id="16" onclick="afficher('qst6','qst7');reponse(16,6)">Rolls Royce</button>   
+        <br/><button type="submit" class="suivant" id="26" onclick="afficher('qst6','qst7');reponse(26,6)">Lincoln</button>   
+       <br/><button type="submit" class="suivant" id="36" onclick="afficher('qst6','qst7');reponse(36,6)">Bentley</button>   
+ </div>
+ <button class="bt" type="submit" onclick="afficher('qst6','qst7');reponse(0,6)">Terminer</button>
+    </div>
+
+<!-- qst 7 -->
+        <div id="qst7" style="display:none;">
+            <h2>Question:7/10</h2>
+            <h1>Qst 7:Quel est le modele de cette voiture ?</h1><br>
+        <div class="c2 cimg">
+            <img src="images/evoque.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:80%;height: 30%;"/><br><br>
+            <button type="submit" class="suivant" id="17"onclick="afficher('qst7','qst8');reponse(17,7)">Evoque 2.0</button>   
+            <br/><button type="submit" id="27" class="suivant"onclick="afficher('qst7','qst8');reponse(27,7)">Velar R-Dynamique</button>   
+           <br/><button type="submit" id="37" class="suivant"onclick="afficher('qst7','qst8');reponse(37,7)">Sport</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('qst7','qst8');reponse(0,7)">Suivant</button>
+        </div>
+
+<!-- qst 8 -->
+        <div id="qst8" style="display:none;">    
+            <h2>Question:8/10</h2>
+            <h1 style="left:15%">Qst8: Ce Cadillac, est le modele de quelle annèe ?</h1><br>
+        <div class="c2 cimg">
+            <img src="images/cadillac-escalade.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:70%;"/><br><br>
+            <button type="submit" class="suivant" id="18"onclick="afficher('qst8','qst9');reponse(18,8)">2016</button>   
+            <br/><button type="submit" id="28" class="suivant"onclick="afficher('qst8','qst9');reponse(28,8)">2018</button>   
+           <br/><button type="submit" id="38" class="suivant"onclick="afficher('qst8','qst9');reponse(38,8)">2020</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('qst8','qst9');reponse(0,8)">Suivant</button>
+        </div>
+
+        <!-- qst 9 -->
+        <div id="qst9" style="display:none;">    
+            <h2>Question:9/10</h2>
+            <h1>Qst 9:Quel est le modele de cette voiture ?</h1><br>
+        <div class="c2 cimg">
+            <img src="images/dodge.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:20%;"/><br><br>
+            <button type="submit" class="suivant" id="19"onclick="afficher('qst9','qst10');reponse(19,9)">Cadillac</button>   
+            <br/><button type="submit" id="29" class="suivant"onclick="afficher('qst9','qst10');reponse(29,9)">Lincoln</button>   
+           <br/><button type="submit" id="39" class="suivant"onclick="afficher('qst9','qst10');reponse(39,9)">Dodge</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('qst9','qst10');reponse(0,9)">Suivant</button>
+        </div>
+
+        <!-- qst 10 -->
+        <div id="qst10" style="display:none;">
+            <h2>Question:10/10</h2>
+            <h1>Qst 10:Quel est le modele de cette voiture ?</h1><br>
+        <div class="c2 cimg">
+            <img src="images/a3.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:80%;"/><br><br>
+            <button type="submit" class="suivant" id="110"onclick="stop();reponse(110,10)">A3</button>   
+            <br/><button type="submit" id="210" class="suivant"onclick="stop();reponse(210,10)">A6</button>   
+           <br/><button type="submit" id="310" class="suivant"onclick="stop();reponse(310,10)">A8</button>   
+     </div>
+     <button class="bt" type="submit" onclick="stop();reponse(0,10)">Terminer</button>
+    </div>
+
+    <div id="btn2" style="display: none;">
+        <div id ="myContainer">
+            <div id="score" style="font-size: 50px;left: 100%;top: 3%;position:relative;color: rgb(195, 30, 210);"></div>
+        </div>  
+            <button class="c1" onclick="afficher('btn2','cqst1');okkk(1)" >Afficher la correction!</button>
+        </div> 
+       
+
+        <script>
+            var id = null;
+    function myMove(x) {
+      var elem = document.getElementById(x);
+      var pos = 0;
+      clearInterval(id);
+      id = setInterval(frame, 20);
+      function frame() {
+        if (pos == 100) {
+          clearInterval(id);
+        } else {
+          pos++;
+          elem.style.top = pos + 'px';
+        }
+      }
+    }
+        </script>
+
+<!-- correction !!!! -->
+   <!-- qst 1 -->
+
+   <div id="cqst1" style="display:none;">
+    <div id="zone1" class="res">Reponse fausse</div> 
+    <h2>Question:1/10</h2>
+                <h1>Qst 1:Ce logo correspond à Jaguar</h1><br>
+            <div class="c2">
+                <img src="images/jaguar.jpg"  style="margin-left:80%;position: relative;right: 35%;bottom: 90%;"/><br><br>
+                <button type="submit" class="suivant" id="juste1">Jaguar</button>   
+                <br/><button type="submit" id="fausse21" class="suivant">Dodge</button>   
+               <br/> <button type="submit" id="fausse31"class="suivant">Ferrari</button>   
+            </div>
+            <button class="bt" type="submit" onclick="afficher('cqst1','cqst2');okkk(2)">Suivant</button>
+        </div>
+    
+    <!-- qst 2 -->
+        <div id="cqst2" style="display:none;">
+            <div id="zone2" class="res">Reponse fausse</div> 
+            <h2>Question:2/10</h2>
+            <h1>Qst 2:Ce logo correspond à Maserati</h1><br>
+        <div class="c2">
+            <img src="images/maserati.jpg" style="margin-left:80%;position: relative;right: 35%;bottom: 40%;"><br><br>
+            <button type="submit" class="suivant" id="juste2">Maserati</button>   
+            <br><button type="submit" id="fausse22"class="suivant" id="2">Chrysler</button>   
+           <br/> <button type="submit" id="fausse32"class="suivant" id="3">Cadillac</button>   
+        </div>
+        <button class="bt" type="submit" onclick="afficher('cqst2','cqst3');okkk(3)">Suivant</button>
+        </div>
+    
+     <!-- qst 3 -->
+        <div id="cqst3" style="display:none;">
+            <div id="zone3" class="res">Reponse fausse</div> 
+
+            <h2>Question:3/10</h2>
+            <h1>Qst 3:Ce logo correspond à Ferrari</h1><br>
+        <div class="c2">
+            <img src="images/ferrari1.jpg"  style="margin-left:80%;position: relative;right: 35%;bottom: 90%;"/><br><br>
+            <button type="submit"  id="fausse13"class="suivant" >Pagani</button>   
+            <br/><button type="submit"  id="fausse23"class="suivant">Pontiac</button>   
+           <br/> <button type="submit" id="juste3" class="suivant">Ferrari</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('cqst3','cqst4');okkk(4)">Suivant</button>
+        </div>
+    
+    <!-- qst 4 -->
+        <div id="cqst4" style="display:none;">
+            <div id="zone4" class="res">Reponse fausse</div> 
+
+            <h2>Question:4/10</h2>
+    
+            <h1>Qst 4:Ce logo correspond à Mustang</h1><br>
+        <div class="c2">
+            <img src="images/mustang.jpg"  style="margin-left:80%;position: relative;right: 41%;bottom:40%;"/><br><br>
+            <button type="submit"  id="fausse14"class="suivant" id="b1">Daewoo</button>   
+            <br/><button type="submit" id="juste4" class="suivant">Mustang</button>   
+           <br/> <button type="submit" id="fausse34" class="suivant">Ferrari</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('cqst4','cqst5');okkk(5)">Suivant</button>
+        </div>
+    <!-- qst 5 -->
+        <div id="cqst5" style="display:none;">
+            <div id="zone5" class="res">Reponse fausse</div> 
+
+            <h2>Question:5/10</h2>
+            <h1>Qst 5:Ce logo correspond à Lamborghini</h1><br>
+        <div class="c2 cimg">
+            <img src="images/lambo.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:80%;"/><br><br>
+            <button type="submit" class="suivant" id="juste5">Lamborghini</button>   
+            <br/><button type="submit" id="fausse25" class="suivant">Lincoln</button>   
+           <br/><button type="submit" id="fausse35" class="suivant">Lexus</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('cqst5','cqst6');okkk(6)">Suivant</button>
+        </div>
+    
+    <!-- qst 6 -->
+        <div id="cqst6" style="display:none;">
+            <div id="zone6" class="res">Reponse fausse</div> 
+            <h2>Question:6/10</h2>
+            <h1>Qst 6:Ce logo correspond à Bentley </h1><br>
+        <div class="c2">
+            <img src="images/bentley.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom: 90%;"/><br/>
+            <button type="submit" id="fausse16" class="suivant" >Rolls Royce</button>   
+            <br/><button type="submit" id="fausse26" class="suivant">Lincoln</button>   
+           <br/><button type="submit" class="suivant" id="juste6">Bentley</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('cqst6','cqst7');okkk(7)">Terminer</button>
+        </div>
+
+<!-- qst 7 -->
+
+        <div id="cqst7" style="display:none;">
+            <div id="zone7" class="res">Reponse fausse</div> 
+            <h2>Question:7/10</h2>
+            <h1>Qst 7:cette voiture est la Range Rover Evoque</h1><br>
+        <div class="c2 cimg">
+            <img src="images/evoque.jpg"  style="margin-left:80%;position: relative;right: 20%;bottom:20%;"/><br><br>
+            <button type="submit" class="suivant" id="juste7">Evoque 2.0</button>   
+            <br/><button type="submit" id="fausse27" class="suivant">Velar R-Dynamique</button>   
+           <br/><button type="submit" id="fausse37" class="suivant">Sport</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('cqst7','cqst8');okkk(8)">Suivant</button>
+        </div>
+
+<!-- qst 8 -->
+        <div id="cqst8" style="display:none;">
+            <div id="zone8" class="res">Reponse fausse</div> 
+            <h2>Question:8/10</h2>
+            <h1>Qst 8: Ce cadillac Escalade est la modele de l'année 2020</h1><br>
+        <div class="c2 cimg">
+            <img src="images/cadillac-escalade.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:80%;"/><br><br>
+            <button type="submit" class="suivant" id="fausse18">2016</button>   
+            <br/><button type="submit" id="fausse28" class="suivant">2018</button>   
+           <br/><button type="submit" id="juste8" class="suivant">2020</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('cqst8','cqst9');okkk(9)">Suivant</button>
+        </div>
+
+        <!-- qst 9 -->
+        <div id="cqst9" style="display:none;">
+            <div id="zone9" class="res">Reponse fausse</div> 
+    
+            <h2>Question:9/10</h2>
+            <h1>Qst 9:Ce logo correspond Dodge </h1><br>
+        <div class="c2 cimg">
+            <img src="images/dodge.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:80%;"/><br><br>
+            <button type="submit" class="suivant" id="fausse19">Cadillac</button>   
+            <br/><button type="submit" id="fausse29" class="suivant">Lincoln</button>   
+           <br/><button type="submit" id="juste9" class="suivant">Dodge</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('cqst9','cqst10');okkk(10)">Suivant</button>
+        </div>
+
+        <!-- qst 10 -->
+        <div id="cqst10" style="display:none;">
+            <div id="zone10" class="res">Reponse fausse</div> 
+            <h2>Question:10/10</h2>
+            <h1>Qst 10:Cette voiture est la Audi A3 Berline </h1><br>
+        <div class="c2 cimg">
+            <img src="images/a3.jpg"  style="margin-left:80%;position: relative;right: 40%;bottom:80%;"/><br><br>
+            <button type="submit" class="suivant" id="juste10">A3</button>   
+            <br/><button type="submit" id="fausse210" class="suivant">A6</button>   
+           <br/><button type="submit" id="fausse310" class="suivant">A8</button>   
+     </div>
+     <button class="bt" type="submit" onclick="afficher('cqst10','valeur')">Terminer</button>
+    </div>
+
+
+
+
+
+    
+        <div id="valeur" style="display: none;">
+            <h1>Merci pour votre attention</h1>
+        </div>
+    
+        <script>
+            if(localStorage.getItem('score:')!= null)
+            {
+            document.getElementById("Bienvenue").innerHTML="Bienvenue "+localStorage.getItem('nom')+"<br/> votre dernier score: "+localStorage.getItem('score:')+"/10.";
+            }else
+            {
+                document.getElementById("Bienvenue").innerHTML="Bienvenue "+localStorage.getItem('nom');
+            }
+            function afficher(x,y,cpt)
+            {
+                document.getElementById(x).style.display="none";
+                document.getElementById(y).style.display = "block";
+                
+            }
+            function okkk(cpt)
+            {
+                myMove('zone'+cpt);
+            }
+            var nb_correct=0;
+            var tab_rep=new Array();
+            tab_rep=[11,12,33,24,15,36,17,38,39,110];
+            function reponse(ident,cpt)
+            {
+                document.getElementById('zone'+cpt).style.display="block";
+            
+                if(Number(ident) == tab_rep[Number(cpt-1)])
+                {
+                    nb_correct++;
+                    document.getElementById('score').innerHTML="votre score: "+nb_correct+"/10";
+                    document.getElementById('juste'+cpt).style.backgroundColor="green";
+                    document.getElementById('zone'+cpt).innerHTML="Reponse juste 👏";
+                    document.getElementById('zone'+cpt).style.color="green";
+
+                }else
+                {
+                    document.getElementById('score').innerHTML="votre score: "+nb_correct+"/10";
+                    document.getElementById('juste'+cpt).style.backgroundColor="green";
+                    document.getElementById('zone'+cpt).style.display="block";
+                    document.getElementById('fausse'+ident).style.backgroundColor="red";
+                    document.getElementById('zone'+cpt).innerHTML="Reponse fausse☹️";
+                }
+                const sc= nb_correct;
+            localStorage.setItem("score:",sc);
+            }
+        </script>
+        <!-- timer -->
+        <script>
+            function start()
+            {
+                afficher('btn','qst1');
+                afficher('Bienvenue','qst1');
+                afficher('btn','timer');
+                intervalId=setInterval(update_timer,100);
+            }
+            var s=00;
+            var h=00;
+            var m=00;
+            var ms=00;
+            function update_timer(){   
+                ms++;               
+            if(ms>59) 
+            {
+                ms=00;
+                s++;               
+               if(s>59) 
+               {
+                   s=00;
+                m++;               
+               if(m>59) 
+               {
+                   m=00;
+                h++;               
+               if(h>23) 
+               {
+                   s=00;
+                   ms=00;
+                   m=00;
+                   h=00;
+               }
+               else {document.getElementById("timer").innerHTML ='<style: font-size:40px>Temps: '+h+'h:'+m+'min:'+s+'s:'+ms+'ms '+'</style>';}
+               }
+               else {document.getElementById("timer").innerHTML ='<style:font-size:40px>Temps: '+h+'h:'+m+'min:'+s+'s:'+ms+'ms'+'</style>';}
+               }
+               else {document.getElementById("timer").innerHTML ='<style:font-size:40px>Temps: '+h+'h:'+m+'min:'+s+'s:'+ms+'ms'+' </style>';}
+            }
+            else {document.getElementById("timer").innerHTML ='<style: font-size:40px>Temps: '+h+'h:'+m+'min:'+s+'s:'+ms+'ms '+'</style>';}
+        
+        }
+        function stop()
+        {
+            afficher('qst10','btn2');
+            clearInterval(intervalId);
+            myMove('score');
+            
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+             body
+            {
+                background-image: url('images/qst3333.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            input
+            {
+                background-color:aquamarine;
+                font-size: 69%;
+            }
+            h1{text-align:center;}
+            h1,h2,label
+            {
+                color:aquamarine;
+                font-size: 150%;
+                
+            }
+            div{color:aquamarine;}
+            section
+            {
+             position: relative;
+             border-radius:5px;
+             font-size:x-large;
+             left:75%;
+             top:10%;
+             transform: translateX(-40%);
+            }
+            button{position: relative;border-radius:5px;
+           background-color:aquamarine; 
+               text-align: center;
+               font-size:x-large;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Quiz cars</h1>
+        <section name="sec">
+            <h2>Inscription</h2>
+        <form id="inscri">
+            <label for="n">Votre Nom<span id="erreurname"></span></br>
+                <input id="nm" type="text" name="nm" required/><span id="e1" style="display:none;color: red;border: 1px solid red;size: 30%;width: 20%;"></span><br>
+            </label>
+                <label for="p">Votre Prenom<span id="erreurp"> </span><br>
+                <input id="pn" type="text" name="pn" required/><span id="e2" style="display:none;color: red;border: 1px solid red;"></span><br>
+            </label>
+            <label for="e">Email<span id="erreurname"></span></br>
+                <input id="e" type="email" name="em" required/><span id="e3" style="display:none;color: red;border: 1px solid red;"></span><br>
+            </label>
+                <label for="mdp">Mot de passe<span id="erreurmdp"></span><br>
+                <input id="mdp" type="password" name="mdp" required/><span id="e4" style="display:none;color: rgb(161, 9, 9);flex-wrap: wrap;border: 1px solid rgb(150, 5, 5);font-size:25px;width: 40%;">veuillez saisir un mdp valide !<br/> (le mdp doit contenir 8 composants y compris des chiffres et des symboles )</span><br>
+            </label>
+            <label for="mdp2">Valider votre mot de passe<span id="erreurmdp"></span><br>
+                <input id="mdp2" type="password" name="mdp2" required/><span id="e5" style="display:none;color: red;">mot de passe incorrect</span><br>
+            </label>
+            <div id="erreur" style="display: none;color: red;font-size: 40px;">Compte deja existant!</div>
+            <button type="submit" id="btn" onclick="ok()">inscription</button>
+        </form>
+        <script>
+            
+            document.getElementById("inscri").addEventListener("submit",function (e)
+            {
+                var inputs=document.getElementsByTagName("input");
+
+                if(inputs["mdp"].value.length <8)
+                {
+                    document.getElementById("e4").style.display="block";
+                    e.preventDefault();
+                    return 0;
+                }else
+                {
+                    document.getElementById("e4").style.display="none";
+                }
+                if(inputs["mdp"].value != inputs["mdp2"].value)
+                {
+                    document.getElementById("e5").style.display="block";
+                    e.preventDefault();
+                    return false;
+                }else
+                {
+                    document.getElementById("e5").style.display="none";
+                }
+                if(localStorage.length >0)
+                {
+                    if(inputs["e"].value == localStorage.getItem("email"))
+                    {
+                        alert("vous avez deja un compte!");
+                        localStorage.setItem("inscrip",1);
+                        window.location.href='connexion.html';
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+                localStorage.clear();
+                    const nm=document.getElementById('nm');
+                    const pn=document.getElementById('pn');
+                    const em=document.getElementById('e');
+                    const mdp=document.getElementById('mdp');
+                    const btn=document.getElementById('btn');
+
+                    localStorage.setItem("inscrip",0);
+                    localStorage.setItem("nom",nm.value);
+                    localStorage.setItem("prenom",pn.value);
+                    localStorage.setItem("mdp",mdp.value);
+                    localStorage.setItem("email",em.value);
+                    location.reload();
+                    e.preventDefault();
+                    window.location.href='connexion.html';
+        
+            });
+        </script>
+    </body>
+</html>
+
+

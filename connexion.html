@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>connexion</title>
+        <style>
+            body
+            {
+                background-image: url('images/qst3333.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            input
+            {
+                background-color:aquamarine;
+                font-size: 100%;
+            }
+            h1{text-align:center;}
+            h1,h2,label
+            {
+                color:aquamarine;
+                font-size: 150%;
+            }
+            div{color:aquamarine;}
+            section
+            {
+             position: relative;
+             border-radius:5px;
+             font-size:x-large;
+             left:75%;
+             top:20%;
+             transform: translateX(-40%);
+            }
+            button{position: relative;border-radius:5px;
+           background-color:aquamarine; 
+               text-align: center;
+               font-size:x-large;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Quiz cars</h1>
+        <section name="sec">
+            <h2>Connexion</h2>
+    <form id="cnx">
+        <label for="e">Email</br>
+            <input id="e" type="email" name="em" /><br>
+            <span id="erreurmail" style="color: red;display: none;">email invalide !</span><br/>
+        </label>
+            <label for="mdp">Mot de passe<br>
+            <input id="mdp" type="password" name="mdp"/><br>
+            <span id="erreurmdp" style="color: red;display: none;">mdp invalide !</span><br/>
+        </label>
+
+            <button id="btn" name="btn" type="submit">inscription</button>
+    </form>
+            <div>..................................................................</div>
+        </section>
+        <script>
+            document.getElementById('cnx').addEventListener("submit",function inscri(e)
+            {
+                var inputs=document.getElementsByTagName("input");
+                for(i=0;i<inputs.length;i++)
+                {
+                if(inputs[i].value=="")
+                {
+                    e.preventDefault();
+                    alert("vous devez vous connecter d'abord");
+                    return false;
+                }
+            }
+
+                if(localStorage.getItem('email')!= inputs["em"].value)
+                {
+                    e.preventDefault();
+                document.getElementById("erreurmail").style.display="block";
+                return false;
+                }else
+                {e.preventDefault();
+                document.getElementById("erreurmail").style.display="none";
+                }
+                if(localStorage.getItem('mdp')!= inputs["mdp"].value)
+                {
+                    e.preventDefault();
+                document.getElementById("erreurmdp").style.display="block";
+                return false;
+                }else{
+                    e.preventDefault();
+                document.getElementById("erreurmdp").style.display="none";
+                window.location.href='Qst.html';
+                }
+                });
+        </script>
+    </body>
+</html>
